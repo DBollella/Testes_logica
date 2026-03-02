@@ -1,4 +1,6 @@
-﻿namespace LC
+﻿using static LC.PedraPapelTesouraLagartoSpockSimplificado;
+
+namespace LC
 {
     public class PedraPapelTesouraLagartoSpockOtimizado
     {
@@ -12,7 +14,7 @@
         }
 
         public static string Jogar(int jogador1, int jogador2)
-        {   
+        {
             var resultado = CalcularJogada(jogador1, jogador2);
 
             return Resultado(jogador1, jogador2, resultado);
@@ -34,7 +36,14 @@
 
         private static int[,] ObterRegras()
         {
-            return new int[,] { { 3, 4 }, { 1, 5 }, { 2, 4 }, { 5, 2 }, { 3, 1 } };
+            return new int[,] 
+            {
+                { (int)Jogada.Tesoura,(int)Jogada.Lagarto },
+                { (int)Jogada.Pedra, (int)Jogada.Spock },
+                { (int)Jogada.Papel, (int)Jogada.Lagarto },
+                { (int)Jogada.Spock, (int)Jogada.Papel },
+                { (int)Jogada.Tesoura, (int)Jogada.Pedra } 
+            };
         }
 
         private static string Resultado(int jogada1, int jogada2, int resultado)

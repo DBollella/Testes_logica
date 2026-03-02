@@ -1,4 +1,4 @@
-﻿using LiveCoding_Pan;
+﻿using LC;
 
 public partial class Program
 {
@@ -18,7 +18,7 @@ public partial class Program
 
         //string resultado = PredraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
 
-        string resultado = PredraPapelTesouraLagartoSpockOtimizado.Jogar(jogador1, jogador2);
+        string resultado = PedraPapelTesouraLagartoSpockOtimizado.Jogar(jogador1, jogador2);
 
         Console.WriteLine(resultado);
         

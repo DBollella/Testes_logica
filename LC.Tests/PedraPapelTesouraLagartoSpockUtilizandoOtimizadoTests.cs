@@ -1,10 +1,10 @@
 using System;
 using Xunit;
-using LiveCoding_Pan;
+using LC;
 
-namespace LiveCoding_Pan.Tests
+namespace LC.Tests
 {
-    public class PredraPapelTesouraLagartoSpockUtilizandoOtimizadoTests
+    public class PedraPapelTesouraLagartoSpockUtilizandoOtimizadoTests
     {
         [Theory]
         [InlineData(1, 3)] // Pedra vence Tesoura
@@ -19,7 +19,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(5, 1)] // Spock vence Pedra
         public void CalcularJogada_Deve_Retornar_Jogador1_Quando_Vencer(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2);
             Assert.Equal(jogador1, resultado);
         }
 
@@ -36,7 +36,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(1,5)]
         public void CalcularJogada_Deve_Retornar_Jogador2_Quando_Vencer(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2);
             Assert.Equal(jogador2, resultado);
         }
 
@@ -48,7 +48,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(5,5)]
         public void CalcularJogada_Deve_Retornar_Zero_Para_Empate(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2);
             Assert.Equal(0, resultado);
         }
 
@@ -57,7 +57,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(-1,0)]
         public void CalcularJogada_Nao_Deve_Aceitar_Jogada_Invalida(int jogador1, int jogador2)
         {
-            Assert.ThrowsAny<IndexOutOfRangeException>(() => PredraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2));
+            Assert.ThrowsAny<IndexOutOfRangeException>(() => PedraPapelTesouraLagartoSpockOtimizado.CalcularJogada(jogador1, jogador2));
         }
     }
 }

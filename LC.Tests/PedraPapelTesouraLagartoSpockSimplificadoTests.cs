@@ -1,14 +1,12 @@
-using System;
 using Xunit;
-using LiveCoding_Pan;
 
-namespace LiveCoding_Pan.Tests
+namespace LC.Tests
 {
-    public class PredraPapelTesouraLagartoSpockSimplificadoTests
+    public class PedraPapelTesouraLagartoSpockSimplificadoTests
     {
 
         [Theory]
-        [InlineData(1, 3)] // Pedra vence Tesoura
+        [InlineData(1, 3)] // Peedra vence Tesoura
         [InlineData(1, 4)] // Pedra vence Lagarto
         [InlineData(2, 1)] // Papel vence Pedra
         [InlineData(2, 5)] // Papel vence Spock
@@ -20,7 +18,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(5, 1)] // Spock vence Pedra
         public void Jogador1_Deve_Vencer_Quando_Regra_Valida(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
             Assert.Equal("Jogador 1 venceu!", resultado);
         }
 
@@ -37,7 +35,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(1, 5)]
         public void Jogador2_Deve_Vencer_Quando_Regra_Valida(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
             Assert.Equal("Jogador 2 venceu!", resultado);
         }
 
@@ -51,7 +49,7 @@ namespace LiveCoding_Pan.Tests
 
         public void Deve_Retornar_Empate(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
             Assert.Equal("Empate!", resultado);
         }
 
@@ -60,7 +58,7 @@ namespace LiveCoding_Pan.Tests
         [InlineData(0, 5)]
         public void Deve_Retornar_Erro_Para_Jogada_Invalida(int jogador1, int jogador2)
         {
-            var resultado = PredraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
+            var resultado = PedraPapelTesouraLagartoSpockSimplificado.Jogar(jogador1, jogador2);
             Assert.Equal("Jogada inválida", resultado);
         }
     }

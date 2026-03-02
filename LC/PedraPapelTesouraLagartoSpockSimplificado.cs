@@ -1,9 +1,9 @@
-﻿namespace LiveCoding_Pan
+﻿namespace LC
 {
     /// <summary>
     /// Versão com lógica simplificada do jogo Pedra, Papel, Tesoura, Lagarto, Spock.
     /// </summary>
-    public class PredraPapelTesouraLagartoSpockSimplificado
+    public class PedraPapelTesouraLagartoSpockSimplificado
     {
         public enum Jogada
         {

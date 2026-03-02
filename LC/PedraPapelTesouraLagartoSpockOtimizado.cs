@@ -4,6 +4,32 @@ namespace LC
 {
     public class PedraPapelTesouraLagartoSpockOtimizado
     {
+
+        private static readonly int[,] REGRAS = new int[,]
+        {
+            {
+                (int)Jogada.Tesoura,
+                (int)Jogada.Lagarto
+            },
+            {
+                (int)Jogada.Pedra,
+                (int)Jogada.Spock
+            },
+            {
+                (int)Jogada.Papel,
+                (int)Jogada.Lagarto
+            },
+            {
+                (int)Jogada.Spock,
+                (int)Jogada.Papel
+            },
+            {
+                (int)Jogada.Tesoura,
+                (int)Jogada.Pedra
+            }
+        };
+
+
         private enum Jogada
         {
             Pedra = 1,
@@ -22,29 +48,16 @@ namespace LC
 
         public static int CalcularJogada(int jogada1, int jogada2)
         {
-            var regras = ObterRegras();
-
             if (jogada1 == jogada2)
                 return 0;
 
-            for (int i = 0; i < regras.GetLength(1); i++)
-                if (regras[jogada1 - 1, i] == jogada2)
+            for (int i = 0; i < REGRAS.GetLength(1); i++)
+                if (REGRAS[jogada1 - 1, i] == jogada2)
                     return jogada1;
 
             return jogada2;
         }
-
-        private static int[,] ObterRegras()
-        {
-            return new int[,] 
-            {
-                { (int)Jogada.Tesoura,(int)Jogada.Lagarto },
-                { (int)Jogada.Pedra, (int)Jogada.Spock },
-                { (int)Jogada.Papel, (int)Jogada.Lagarto },
-                { (int)Jogada.Spock, (int)Jogada.Papel },
-                { (int)Jogada.Tesoura, (int)Jogada.Pedra } 
-            };
-        }
+                
 
         private static string Resultado(int jogada1, int jogada2, int resultado)
         {

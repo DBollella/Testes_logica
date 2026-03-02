@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LiveCoding_Pan.Tests/LC_Pan.Tests.csproj" />
+  <Project Path="LiveCoding_Pan/LC_PAN.csproj" />
+</Solution>

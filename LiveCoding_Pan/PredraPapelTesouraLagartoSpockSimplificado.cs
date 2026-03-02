@@ -1,21 +1,24 @@
 ﻿namespace LiveCoding_Pan
 {
+    /// <summary>
+    /// Versão com lógica simplificada do jogo Pedra, Papel, Tesoura, Lagarto, Spock.
+    /// </summary>
     public class PredraPapelTesouraLagartoSpockSimplificado
     {
         public enum Jogada
         {
-            Pedra = 0,
-            Papel = 1,
-            Tesoura = 2,
-            Lagarto = 3,
-            Spock = 4
+            Pedra = 1,
+            Papel = 2,
+            Tesoura = 3,
+            Lagarto = 4,
+            Spock = 5
         }
 
         /// <summary>
         /// <param name="jogador1"></param>
         /// <param name="jogador2"></param>
         /// <returns></returns>
-        public string Jogar(int jogador1, int jogador2)
+        public static string Jogar(int jogador1, int jogador2)
         {
             // Valida entrada
             if (jogador1 < (int)Jogada.Pedra || jogador1 > (int)Jogada.Spock ||
